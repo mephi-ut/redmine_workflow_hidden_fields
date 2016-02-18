@@ -19,7 +19,7 @@ module RedmineWorkflowHiddenFields
         html_options = {}
         selected = permissions[status.id][name]
 
-        hidden = field.is_a?(CustomField) && !field.visible? && !role.custom_fields.to_a.include?(field)
+        hidden = field.is_a?(CustomField) && !field.visible? #&& !role.custom_fields.to_a.include?(field)
         if hidden
           options[0][0] = l(:label_hidden)
           selected = ''
